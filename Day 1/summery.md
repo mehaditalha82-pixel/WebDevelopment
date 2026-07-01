@@ -1,861 +1,392 @@
-````md
-# HTML Notes
+# HTML & CSS Notes — Tags, Semantic Elements, Attributes & Interview Questions
 
-A complete beginner to interview-level guide covering common HTML tags, attributes, display types, HTML5 semantic elements, and interview questions.
-
----
-
-# What is HTML?
-
-**HTML (HyperText Markup Language)** is the standard markup language used to create web pages.
-
-- Defines the structure of a webpage
-- Uses **tags**
-- Works together with CSS and JavaScript
+A quick-reference guide covering common HTML tags, semantic tags, CSS display types, key attributes, and frequently asked interview questions.
 
 ---
 
-# Basic HTML Structure
+## Table of Contents
 
+1. [Basic HTML Tags](#basic-html-tags)
+2. [Semantic Tags](#semantic-tags)
+3. [CSS Display: block, inline, inline-block](#css-display-block-inline-inline-block)
+4. [Important Attributes](#important-attributes)
+5. [HTML4 vs HTML5](#html4-vs-html5)
+6. [Interview Questions](#interview-questions)
+
+---
+
+## Basic HTML Tags
+
+### `<h1>` — Heading
+Largest section heading. Use only one `<h1>` per page for SEO/accessibility.
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Website</title>
-</head>
-
-<body>
-
-</body>
-</html>
+<h1>This is a main heading</h1>
 ```
 
----
-
-# Text Tags
-
-## 1. `<h1>` - `<h6>`
-
-### Work
-Used for headings.
-
-- `<h1>` = Largest heading
-- `<h6>` = Smallest heading
-
-### Syntax
-
+### `<p>` — Paragraph
+Defines a block of text.
 ```html
-<h1>Main Heading</h1>
-<h2>Sub Heading</h2>
-<h3>Small Heading</h3>
+<p>This is a paragraph of text.</p>
 ```
 
----
-
-## 2. `<p>`
-
-### Work
-
-Defines a paragraph.
-
-### Syntax
-
+### `<strong>` — Strong Importance
+Marks text as important. Renders bold by default and carries semantic weight (screen readers emphasize it).
 ```html
-<p>This is a paragraph.</p>
+<strong>This text is important.</strong>
 ```
 
----
-
-## 3. `<strong>`
-
-### Work
-
-Makes text **important**.
-
-Usually appears bold.
-
-### Syntax
-
+### `<em>` — Emphasis
+Marks text with stress emphasis. Renders italic by default.
 ```html
-<strong>Important Text</strong>
+<em>This text is emphasized.</em>
 ```
 
-Output:
-
-**Important Text**
-
----
-
-## 4. `<em>`
-
-### Work
-
-Emphasizes text.
-
-Usually appears italic.
-
-### Syntax
-
+### `<br>` — Line Break
+Inserts a single line break. Self-closing/void element.
 ```html
-<em>Italic Text</em>
+Line one<br>Line two
 ```
 
-Output:
-
-*Italic Text*
-
----
-
-## 5. `<br>`
-
-### Work
-
-Creates a line break.
-
-### Syntax
-
+### `<hr>` — Horizontal Rule
+Creates a thematic break (horizontal line) between content. Void element.
 ```html
-Hello<br>
-World
-```
-
-Output
-
-```
-Hello
-World
-```
-
----
-
-## 6. `<hr>`
-
-### Work
-
-Creates a horizontal line.
-
-### Syntax
-
-```html
+<p>Section one</p>
 <hr>
+<p>Section two</p>
 ```
 
----
-
-# Lists
-
----
-
-## 7. `<ul>`
-
-### Work
-
-Creates an unordered (bulleted) list.
-
-### Syntax
-
+### `<ul>` — Unordered List
+Bullet-point list.
 ```html
 <ul>
-    <li>Apple</li>
-    <li>Mango</li>
-    <li>Banana</li>
+  <li>Apple</li>
+  <li>Banana</li>
 </ul>
 ```
 
-Output
-
-- Apple
-- Mango
-- Banana
-
----
-
-## 8. `<ol>`
-
-### Work
-
-Creates an ordered (numbered) list.
-
-### Syntax
-
+### `<ol>` — Ordered List
+Numbered list.
 ```html
 <ol>
-    <li>Wake Up</li>
-    <li>Study</li>
-    <li>Sleep</li>
+  <li>Step one</li>
+  <li>Step two</li>
 </ol>
 ```
 
-Output
-
-1. Wake Up
-2. Study
-3. Sleep
-
----
-
-## 9. `<li>`
-
-### Work
-
-Represents one list item.
-
-Must be inside `<ul>` or `<ol>`.
-
-### Syntax
-
+### `<li>` — List Item
+Defines an item inside `<ul>` or `<ol>`.
 ```html
-<li>Item</li>
+<li>List item content</li>
 ```
 
----
-
-# Links
-
----
-
-## 10. `<a>`
-
-### Work
-
-Creates hyperlinks.
-
-### Syntax
-
+### `<a>` — Anchor (Link)
+Creates a hyperlink.
 ```html
-<a href="https://google.com">Google</a>
+<a href="https://example.com">Visit Example</a>
 ```
 
----
-
-# Container Tags
-
----
-
-## 11. `<div>`
-
-### Work
-
-Block-level container used to group elements.
-
-### Syntax
-
+### `<div>` — Division
+Generic block-level container with no inherent meaning. Used for grouping/styling.
 ```html
-<div>
-    <h2>Title</h2>
-    <p>Paragraph</p>
+<div class="container">
+  <p>Content inside a div</p>
 </div>
 ```
 
----
-
-## 12. `<span>`
-
-### Work
-
-Inline container.
-
-Mostly used for styling part of text.
-
-### Syntax
-
+### `<span>` — Inline Container
+Generic inline container with no inherent meaning. Used for styling small bits of text.
 ```html
-<p>Hello <span>World</span></p>
+<p>This is <span class="highlight">highlighted</span> text.</p>
 ```
 
 ---
 
-# Forms
+## Forms
 
----
-
-## 13. `<form>`
-
-### Work
-
-Creates an HTML form.
-
-### Syntax
-
+### `<form>`
+Wraps form controls and defines how data is submitted.
 ```html
-<form>
-
+<form action="/submit" method="post">
+  <!-- form fields here -->
 </form>
 ```
 
----
-
-## 14. `<input>`
-
-### Work
-
-Accepts user input.
-
-### Common Types
-
+### `<input>`
+Collects user input. Type varies via the `type` attribute.
 ```html
-<input type="text">
-
-<input type="password">
-
-<input type="email">
-
-<input type="number">
-
-<input type="checkbox">
-
-<input type="radio">
-
-<input type="file">
-
-<input type="date">
+<input type="text" name="username" placeholder="Enter username">
+<input type="email" name="email">
+<input type="password" name="password">
+<input type="checkbox" name="subscribe">
+<input type="radio" name="gender" value="male">
+<input type="submit" value="Submit">
 ```
 
----
-
-## 15. `<label>`
-
-### Work
-
-Provides a label for an input.
-
-### Syntax
-
+### `<label>`
+Describes/labels a form control. Improves accessibility.
 ```html
-<label for="name">Name</label>
-
-<input id="name">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
 ```
 
----
-
-## 16. `<button>`
-
-### Work
-
-Creates a clickable button.
-
-### Syntax
-
+### `<button>`
+Clickable button. Default `type` inside a form is `submit`.
 ```html
-<button>Submit</button>
+<button type="submit">Submit</button>
+<button type="button" onclick="doSomething()">Click Me</button>
 ```
 
----
-
-## 17. `<textarea>`
-
-### Work
-
-Accepts multiple lines of text.
-
-### Syntax
-
+### `<textarea>`
+Multi-line text input.
 ```html
-<textarea rows="5" cols="30"></textarea>
+<textarea name="message" rows="4" cols="50">Default text</textarea>
 ```
 
----
-
-## 18. `<select>`
-
-### Work
-
-Creates a dropdown menu.
-
-### Syntax
-
+### `<select>` and `<option>`
+Dropdown list of choices.
 ```html
-<select>
-
+<select name="country">
+  <option value="bd">Bangladesh</option>
+  <option value="in">India</option>
+  <option value="us">USA</option>
 </select>
 ```
 
 ---
 
-## 19. `<option>`
+## Semantic Tags
 
-### Work
+Semantic tags clearly describe their meaning to both the browser and the developer — improving accessibility, SEO, and code readability.
 
-Defines an option inside a dropdown.
-
-### Syntax
-
-```html
-<select>
-
-    <option>Bangladesh</option>
-
-    <option>Japan</option>
-
-</select>
-```
-
----
-
-# Semantic Tags (HTML5)
-
-Semantic tags describe the meaning of the content.
-
----
-
-## `<header>`
-
-Top section of a webpage.
-
+### `<header>`
+Introductory content or navigational links for a page or section (logo, title, nav).
 ```html
 <header>
-
-Website Logo
-
+  <h1>My Website</h1>
+  <nav>...</nav>
 </header>
 ```
 
----
-
-## `<nav>`
-
-Navigation links.
-
+### `<nav>`
+Defines a block of navigation links.
 ```html
 <nav>
-
-<a href="#">Home</a>
-
-<a href="#">About</a>
-
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
 </nav>
 ```
 
----
-
-## `<main>`
-
-Main content of the webpage.
-
+### `<main>`
+The dominant, unique content of the document. Only one `<main>` per page.
 ```html
 <main>
-
-Main Content
-
+  <article>...</article>
 </main>
 ```
 
----
+### `<article>`
+Self-contained, independently distributable content (blog post, news story, comment).
+```html
+<article>
+  <h2>Article Title</h2>
+  <p>Article content...</p>
+</article>
+```
 
-## `<section>`
+### `<aside>`
+Content tangentially related to the main content (sidebar, pull quote, ads).
+```html
+<aside>
+  <h3>Related Links</h3>
+  <ul>...</ul>
+</aside>
+```
 
-Represents a section of content.
+### `<footer>`
+Footer for its nearest sectioning ancestor (copyright, contact info, links).
+```html
+<footer>
+  <p>&copy; 2026 My Website. All rights reserved.</p>
+</footer>
+```
 
+### `<section>`
+Generic standalone section of content, usually with its own heading.
 ```html
 <section>
-
-<h2>Courses</h2>
-
+  <h2>Our Services</h2>
+  <p>...</p>
 </section>
 ```
 
 ---
 
-## `<article>`
+## CSS Display: block, inline, inline-block
 
-Independent content.
-
-Example:
-
-- News
-- Blog
-- Post
-
-```html
-<article>
-
-Blog Post
-
-</article>
-```
-
----
-
-## `<aside>`
-
-Sidebar or extra information.
-
-```html
-<aside>
-
-Advertisements
-
-</aside>
-```
-
----
-
-## `<footer>`
-
-Bottom section of webpage.
-
-```html
-<footer>
-
-Copyright 2026
-
-</footer>
-```
-
----
-
-# Block vs Inline vs Inline-Block
-
-| Property | Block | Inline | Inline-block |
-|-----------|--------|---------|--------------|
-| Starts new line | Yes | No | No |
-| Width | Full width | Content width | Content width |
-| Height & Width | Can set | Cannot set | Can set |
-| Margin | Yes | Left & Right only | Yes |
-| Padding | Yes | Limited | Yes |
-
-### Examples
-
-Block
-
-```html
-<div></div>
-
-<p></p>
-
-<h1></h1>
-```
-
-Inline
-
-```html
-<span></span>
-
-<a></a>
-
-<strong></strong>
-
-<em></em>
-```
-
-Inline-block
-
-Usually created using CSS.
+| Property | Starts on new line | Width/Height settable | Default width |
+|---|---|---|---|
+| **block** | Yes | Yes | 100% of parent |
+| **inline** | No | No (ignored) | Content width only |
+| **inline-block** | No | Yes | Content width only |
 
 ```css
-display:inline-block;
+.block-el {
+  display: block;        /* e.g. div, p, h1, ul, li */
+}
+
+.inline-el {
+  display: inline;       /* e.g. span, a, strong, em */
+}
+
+.inline-block-el {
+  display: inline-block; /* flows inline but accepts width/height/margin/padding fully */
+}
 ```
 
+- **block** elements stack vertically and take up the full width available.
+- **inline** elements flow within text and only take up as much width as their content; `width`/`height`/top-bottom `margin` have no effect.
+- **inline-block** elements behave like inline elements in flow (sit next to each other) but accept box-model properties like a block element.
+
 ---
 
-# Important HTML Attributes
+## Important Attributes
 
----
-
-## href
-
-Specifies the URL.
-
+### `target="_blank"`
+Opens a link in a new browser tab/window. Best practice: pair with `rel="noopener noreferrer"` for security.
 ```html
-<a href="https://google.com">
-Google
-</a>
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">Open in new tab</a>
 ```
 
----
-
-## target="_blank"
-
-Opens link in a new tab.
-
+### `mailto:`
+Used in `href` to open the user's default email client with a pre-filled recipient.
 ```html
-<a href="https://google.com"
-target="_blank">
-
-Google
-
-</a>
+<a href="mailto:someone@example.com">Email Us</a>
+<a href="mailto:someone@example.com?subject=Hello&body=Hi there">Email with Subject</a>
 ```
 
----
-
-## mailto
-
-Opens the user's email application.
-
-```html
-<a href="mailto:abc@gmail.com">
-
-Send Email
-
-</a>
-```
-
----
-
-## controls (Audio)
-
-Displays audio controls.
-
+### `controls` (audio/video)
+Boolean attribute that displays the browser's default playback controls (play, pause, volume, seek bar).
 ```html
 <audio controls>
-
-<source src="song.mp3">
-
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
+
+<video controls width="400">
+  <source src="video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 ```
 
-Controls include:
-
-- Play
-- Pause
-- Volume
-- Timeline
-- Download (browser dependent)
+Other useful `<audio>`/`<video>` attributes: `autoplay`, `loop`, `muted`, `preload`.
 
 ---
 
-# HTML4 vs HTML5
+## HTML4 vs HTML5
 
-| HTML4 | HTML5 |
-|--------|--------|
-| Released in 1997 | Released in 2014 |
-| No semantic tags | Semantic tags available |
-| No audio/video support | Built-in audio/video |
-| Uses long DOCTYPE | Simple DOCTYPE |
-| Less form input types | Many new input types |
-| Uses plugins for multimedia | Native multimedia support |
-| Limited graphics | Supports Canvas and SVG |
-| Poor mobile support | Mobile-friendly |
-
----
-
-# Frequently Used HTML Input Types
-
-```html
-text
-
-password
-
-email
-
-number
-
-date
-
-file
-
-checkbox
-
-radio
-
-submit
-
-reset
-
-color
-
-range
-
-url
-
-tel
-```
+| Feature | HTML4 | HTML5 |
+|---|---|---|
+| **Doctype** | `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" ...>` (long) | `<!DOCTYPE html>` (simple) |
+| **Semantic tags** | No (`<div id="header">` used instead) | Yes (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<aside>`) |
+| **Audio/Video** | Required third-party plugins (Flash, etc.) | Native `<audio>` and `<video>` tags |
+| **Graphics** | No native support (needed Flash/Silverlight) | Native `<canvas>` and SVG support |
+| **Form input types** | Basic types only (text, password, checkbox, radio) | New types: `email`, `date`, `number`, `range`, `url`, `search`, `tel`, `color` |
+| **Local storage** | Only cookies | `localStorage` and `sessionStorage` APIs |
+| **Offline support** | Not supported | Application Cache / Service Workers |
+| **Geolocation** | Not supported | Native Geolocation API |
+| **Drag and drop** | Not supported natively | Native Drag and Drop API |
+| **Browser compatibility** | Widely supported, older standard | Modern standard, supported by all current browsers |
+| **Error handling** | Strict parsing, less forgiving | More forgiving and consistent parsing rules |
+| **Multimedia plugins** | Plugin-dependent | Plugin-free, native support |
+| **Web Sockets** | Not supported | Native WebSocket API for real-time communication |
+| **Vector Graphics** | Not supported natively | Native SVG support |
+| **New attributes** | Limited | `placeholder`, `autofocus`, `required`, `pattern`, `multiple`, etc. |
 
 ---
 
-# Mini Form Example
+## Interview Questions
 
-```html
-<form>
+### HTML Basics
 
-<label>Name</label>
+1. **What is the difference between `<strong>` and `<b>`, and between `<em>` and `<i>`?**
+   `<strong>` and `<em>` carry semantic meaning (importance/emphasis, read differently by screen readers), while `<b>` and `<i>` are purely presentational (bold/italic) with no semantic meaning.
 
-<input type="text">
+2. **What is the difference between `<ul>`, `<ol>`, and `<li>`?**
+   `<ul>` creates an unordered (bulleted) list, `<ol>` creates an ordered (numbered) list, and `<li>` defines each item inside either list type.
 
-<br><br>
+3. **What does the `target="_blank"` attribute do, and why should it be paired with `rel="noopener noreferrer"`?**
+   It opens the link in a new tab/window. Without `rel="noopener noreferrer"`, the new page can access `window.opener`, posing a security/performance risk (tabnabbing).
 
-<label>Email</label>
+4. **What is the difference between `<div>` and `<span>`?**
+   `<div>` is a block-level generic container used to group larger sections of content. `<span>` is an inline generic container used to style small pieces of text within a line.
 
-<input type="email">
+5. **Why is `<hr>` considered a void/self-closing element?**
+   Because it has no content or closing tag — it simply represents a thematic break and doesn't wrap anything.
 
-<br><br>
+### Semantic HTML
 
-<label>Country</label>
+6. **What is semantic HTML and why does it matter?**
+   Semantic HTML uses tags that describe their meaning/purpose (`<header>`, `<nav>`, `<article>`, etc.) rather than generic containers. It improves accessibility (screen readers), SEO (search engines understand page structure), and code readability/maintainability.
 
-<select>
+7. **What's the difference between `<section>` and `<div>`?**
+   `<section>` is a semantic element representing a thematic grouping of content (typically with a heading), while `<div>` has no semantic meaning and is used purely for styling/layout grouping.
 
-<option>Bangladesh</option>
+8. **What's the difference between `<article>` and `<section>`?**
+   `<article>` is meant for self-contained, independently distributable content (like a blog post that could stand alone elsewhere), whereas `<section>` groups related content within a page that may not make sense standalone.
 
-<option>Japan</option>
+9. **Can you have more than one `<header>`, `<nav>`, or `<footer>` on a page?**
+   Yes — `<header>`, `<nav>`, and `<footer>` can be used multiple times (e.g., a page header and an article header), but `<main>` should only appear once per page.
 
-</select>
+10. **Where would you typically use `<aside>`?**
+    For content tangentially related to the main content, such as sidebars, pull quotes, advertisements, or related-links widgets.
 
-<br><br>
+### CSS Display
 
-<textarea></textarea>
+11. **What's the difference between `display: block`, `inline`, and `inline-block`?**
+    `block` elements start on a new line and take full available width; `width`/`height` apply. `inline` elements flow within the text line and ignore `width`/`height`/vertical margin. `inline-block` flows like inline but respects `width`/`height` and full box-model properties.
 
-<br><br>
+12. **Why doesn't setting `width` on a `<span>` work by default?**
+    Because `<span>` is `display: inline` by default, and inline elements ignore explicit `width`/`height`. You'd need to change its `display` to `inline-block` or `block`.
 
-<button>Submit</button>
+13. **Name some default block-level and default inline elements.**
+    Block: `<div>`, `<p>`, `<h1>`–`<h6>`, `<ul>`, `<ol>`, `<li>`, `<section>`, `<article>`. Inline: `<span>`, `<a>`, `<strong>`, `<em>`, `<img>` (technically inline but accepts width/height).
 
-</form>
-```
+### Forms
 
----
+14. **What is the purpose of the `<label>` tag, and how is it linked to an input?**
+    It provides an accessible, clickable text description for a form control. It's linked via the `for` attribute matching the input's `id`, or by wrapping the input inside the label.
 
-# Interview Questions
+15. **What's the difference between `<button type="submit">` and `<button type="button">`?**
+    `type="submit"` submits the enclosing form when clicked. `type="button"` does nothing by default and is typically used with JavaScript event handlers for custom actions.
 
-## Basic
+16. **What new `<input>` types were introduced in HTML5?**
+    `email`, `url`, `tel`, `number`, `range`, `date`, `time`, `datetime-local`, `month`, `week`, `color`, `search` — these provide built-in validation and specialized UI controls.
 
-### 1. What is HTML?
+### HTML4 vs HTML5
 
-HTML is the standard markup language used to create the structure of web pages.
+17. **What are the main new semantic elements introduced in HTML5?**
+    `<header>`, `<footer>`, `<nav>`, `<article>`, `<section>`, `<aside>`, `<main>`, `<figure>`, `<figcaption>`.
 
----
+18. **How does HTML5 handle audio and video differently from HTML4?**
+    HTML5 introduced native `<audio>` and `<video>` tags with a built-in `controls` attribute, removing the need for third-party plugins like Flash that HTML4 relied on.
 
-### 2. Difference between `<div>` and `<span>`?
+19. **What storage options does HTML5 provide that HTML4 didn't have?**
+    `localStorage` and `sessionStorage` (Web Storage API), offering more storage capacity and persistence options than cookies alone.
 
-| div | span |
-|------|------|
-| Block element | Inline element |
-| Takes full width | Takes content width |
+20. **Is HTML5 backward compatible with HTML4?**
+    Yes, HTML5 was designed to be backward compatible — older HTML4 markup generally still renders correctly in HTML5-compliant browsers, although deprecated tags/attributes should be avoided in new code.
 
----
+### Miscellaneous
 
-### 3. Difference between `<strong>` and `<b>`?
+21. **What does the `controls` attribute do on `<audio>`/`<video>` tags?**
+    It's a boolean attribute that tells the browser to display its default playback UI (play/pause button, volume, progress bar) for the media element.
 
-- `<strong>` gives semantic importance (important text).
-- `<b>` only makes text bold without semantic meaning.
+22. **How would you create a clickable email link that pre-fills a subject line?**
+    ```html
+    <a href="mailto:someone@example.com?subject=Hello">Email Me</a>
+    ```
 
----
-
-### 4. Difference between `<em>` and `<i>`?
-
-- `<em>` adds semantic emphasis.
-- `<i>` only changes the appearance to italic.
-
----
-
-### 5. Difference between `<ul>` and `<ol>`?
-
-- `<ul>` = Bulleted list
-- `<ol>` = Numbered list
-
----
-
-### 6. Why use semantic tags?
-
-- Better SEO
-- Better Accessibility
-- Easier Maintenance
-- Cleaner Code
-
----
-
-### 7. Difference between HTML and HTML5?
-
-HTML5 introduced:
-
-- Semantic elements
-- Audio
-- Video
-- Canvas
-- SVG
-- Better forms
-- Local storage
-
----
-
-### 8. What does `target="_blank"` do?
-
-It opens the linked page in a new browser tab.
-
----
-
-### 9. What is `mailto`?
-
-Used to open the default email application.
-
-Example:
-
-```html
-<a href="mailto:abc@gmail.com">
-Email Me
-</a>
-```
-
----
-
-### 10. Why use `<label>`?
-
-- Improves accessibility.
-- Clicking the label focuses the corresponding input.
-- Makes forms easier to use.
-
----
-
-### 11. Difference between Block and Inline elements?
-
-| Block | Inline |
-|--------|--------|
-| Starts on a new line | Does not start on a new line |
-| Full width | Only content width |
-| Can contain inline elements | Cannot contain block elements (typically) |
-
----
-
-### 12. What is the purpose of the `controls` attribute?
-
-Adds browser controls to media elements like:
-
-- Play
-- Pause
-- Volume
-- Timeline
-
-Example
-
-```html
-<audio controls>
-
-<source src="music.mp3">
-
-</audio>
-```
-
----
-
-# Quick Revision
-
-- `<h1>` → Heading
-- `<p>` → Paragraph
-- `<strong>` → Important bold text
-- `<em>` → Emphasized italic text
-- `<br>` → Line break
-- `<hr>` → Horizontal line
-- `<ul>` → Bullet list
-- `<ol>` → Numbered list
-- `<li>` → List item
-- `<a>` → Hyperlink
-- `<div>` → Block container
-- `<span>` → Inline container
-- `<form>` → Form
-- `<input>` → User input
-- `<label>` → Input label
-- `<button>` → Button
-- `<textarea>` → Multi-line input
-- `<select>` → Dropdown
-- `<option>` → Dropdown option
-- `<header>` → Top section
-- `<nav>` → Navigation
-- `<main>` → Main content
-- `<section>` → Content section
-- `<article>` → Independent article/post
-- `<aside>` → Sidebar
-- `<footer>` → Bottom section
-- `target="_blank"` → Open link in a new tab
-- `mailto:` → Open email client
-- `controls` → Show audio/video controls
-````
+23. **What's the difference between a void element and a normal element? Give two examples.**
+    A void element has no closing tag and cannot contain content (e.g., `<br>`, `<hr>`, `<img>`, `<input>`). A normal element has both opening and closing tags and can contain content (e.g., `<p>...</p>`, `<div>...</div>`).
