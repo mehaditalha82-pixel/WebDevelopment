@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav_bar{
+    background: white;
+    height: 2.3rem;
+}
+
+.nav_bar .ul-bar{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.nav_bar .ul-bar li{
+     list-style-type: none;
+}
+
+.nav_bar .ul-bar li .nav_item{
+    margin: 0 5px;
+    font-size: 1.5rem;
+    list-style: none;
+    text-decoration: none;
+    padding: 0.8rem;
+    color: black;
+}
+
+.nav_bar .ul-bar li .nav_item:hover{
+    background: #605e5e;
+    color: white;
+    border-radius: 5px;
+}
+
+.main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    height: 100vh;
+}
+
+.main-content .part-A{
+    margin: 0 auto;
+    padding: 8rem;
+    text-align: justify;
+}
+
+.main-content .part-A .main-text{
+    font-size: 40px;
+}
+
+.main-content .part-A .sub-text{
+    font-size: 18px;
+    padding: 20px 0;
+}
+
+.main-content .part-A .btn{
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: white;
+    border: 3px solid  #605e5e;
+    font-size: 20px;
+    color: #605e5e;
+}
+
+.main-content .part-A .btn:hover{
+    background-color:  #605e5e;
+    color: white;
+}
+
+
+.main-content .part-B img{
+    width: 600px;
+    border-radius: 20px;
+}
+
+.shoping{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.shoping .divison{
+    text-align: center;
+    padding: 40px;
+}
+
+
+.shoping .divison .shop-head{
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.shoping .shop-item{
+   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin: 0 50px;
+}
+.shoping .shop-item .shirt img{
+    
+    width: 300px;
+    padding: 5px;
+}
+
+.shoping .shop-item .shirt{
+     margin: 50px;
+    width: max-content;
+    text-align: center;
+     box-shadow: 4px 4px rgba(104, 104, 104, 0.202);
+     border-radius: 20px;
+     padding: 10px 0;
+}
+
+
+.shoping .shop-item .shirt .buy-shirt{
+    background: orangered;
+    margin: 1rem;
+    padding: 0.8rem;
+    width: 90px;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    right: -5rem;
+    color: white;
+    font-weight: bolder;
+}
+
