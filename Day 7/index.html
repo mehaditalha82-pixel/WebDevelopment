@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main"><input type="text" id="inter" placeholder="Enter Name"></div>
+    <div class="btns">
+        <button id="click_1" onclick="add()">Add</button>
+        <button id="click_2" onclick="remove()">Remove</button>
+        <p id="out"></p>
+    </div>
+    <script>
+        let x = ["Talha", "Rahim", "Karim", "Sayem"];
+        let add_btn = document.getElementById("click_1");
+        let rmv_btn = document.getElementById("click_2");
+        let input = document.getElementById("inter");
+        let out = document.getElementById("out");
+
+        function add(){
+            x.push(input.value);
+            out.innerHTML = x;
+        }
+
+        function remove(){
+            x.pop();
+            out.innerHTML = x;
+        }
+    </script>
+</body>
+</html>
