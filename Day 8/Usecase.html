@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Pannel</title>
+    <style>
+        .input-holder{
+            margin: 15px 0;
+        }
+        input, button{
+            padding: 8px;
+            border: none;
+            background: none;
+            outline: none;
+            box-shadow: 2px 2px 2px rgba(119, 128, 0, 0.333);
+        }
+        input::placeholder{
+            color: black;
+            font-weight: bolder;
+
+        }
+    </style>
+</head>
+<body>
+    <main class="main-box">
+        <div class="input-holder">
+            <input type="text" id="put1" placeholder="Name">
+            <input type="password" id="put2" placeholder="Pass">
+        </div>
+        <div class="btn-holder">
+            <button id="btn1" onclick="log_in()">Log in</button>
+            <button id="btn2" onclick="signin()">Sign up</button>
+        </div>
+    </main>
+    <script>
+        let user_list = [];
+        let name = document.getElementById("put1");
+        let pass = document.getElementById("put2");
+        let login = document.getElementById("btn1");
+        let signup = document.getElementById("btn2");
+
+        function signin(){
+            if(name.value && pass.value){
+                user_list.push(name.value.toLowerCase());
+                console.log(user_list);
+               
+                if(login.style.display==="none"){
+                        login.style.display = "block";
+                }
+            }else{
+                alert("Put values ")
+            }
+        }
+
+        log_in=()=>{
+            if(user_list.includes(name.value.toLowerCase())){
+                alert("Logged In");
+            }else{
+                alert("User not found");
+                login.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>
