@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckPoint</title>
+    <style>
+        .main{
+            display: flex;
+        }
+
+        .Log_in ,.sign_in, .display{
+            margin: auto 12px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 15px;
+            padding: 9px;
+        }
+
+        input, button{
+            margin: 2px;
+            border: none;
+            background: none;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="Log_in" id="LogInPannel">
+            <h3 class="main-text">Log In</h3>
+            <input type="text" class="text1" id = "Mail" placeholder="Email">
+            <input type="password" class="text2" id = "pass" placeholder="Password">
+            <button class="LogIn" onclick="log_in()" id="Log">LogIn</button>
+        </div>
+        <div class="sign_in" id="SignInPannel">
+            <h3>Sign in</h3>
+            <input type="text" id="text1" placeholder="Name">
+             <input type="text" class="text1" id = "Mail_s" placeholder="Email">
+            <input type="password" class="text2" id = "pass_s" placeholder="Password">
+            <button id="Log_s" onclick="sgn()">Sign Up</button>
+        </div>
+        <div class="display">
+            <button id="show" onclick="show_db()">Show</button>
+            <p class="" id="monitor"></p>
+        </div>
+    </div>
+    <script>
+        let user_list = ['x@gmail.com'];
+        let email = document.getElementById("Mail");
+        let pass = document.getElementById("pass");
+        let Log = document.getElementById("Log");
+        let email_s = document.getElementById("Mail_s");
+        let pass_s = document.getElementById("pass_s");
+        let Log_s = document.getElementById("Log_s");
+        let show = document.getElementById("show");
+        let monitor = document.getElementById("monitor");
+       
+        log_in=()=>{
+            if(email.value && pass.value){
+               if(email.value.includes('@')){
+
+                if(user_list.includes(email.value.toLowerCase().trim())){
+                    alert("Logged In ");
+                }else{
+                    alert("User not Signed in");
+                }
+
+               }else{
+                alert('Provide a valid email');
+               }
+            }else{
+                alert("Put values ")
+            }
+        }
+
+        sgn=()=>{
+            if(email_s.value && pass_s.value){
+               if(email_s.value.includes('@')){
+
+                user_list.push(email_s.value);
+
+               }else{
+                alert('Provide a valid email');
+               }
+            }else{
+                alert("Put values ")
+            }
+        }
+
+        show_db=()=>{
+            monitor.innerHTML = user_list;
+        }
+
+    </script>
+</body>
+</html>
