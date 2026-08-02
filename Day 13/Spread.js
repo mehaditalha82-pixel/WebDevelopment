@@ -11,9 +11,9 @@ console.log(arr2);
 
 
 let students = {
-    name :"Talha",
-    age : 20,
+    name: "Talha",
+    age: 20,
 }
 
-let student_2 = {...students, gpa : "5.00"}
+let student_2 = { ...students, gpa: "5.00" }
 console.log(student_2);
