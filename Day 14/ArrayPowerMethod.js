@@ -19,3 +19,17 @@ let age = [1, 5, 6, 18, 20, 33, 22];
 let first_Voter = age.find((i, indx)=> i >=18); //filter() => filter out which are true only first element match the condition 
 
 console.log(first_Voter); 
+
+let numbers = [1, 9, 2, 4, 8, 4, 6, 7, 18, 26];
+
+let precise_numbers = numbers.slice(2, 6); //slice() => cutts of the array using index
+
+console.log(precise_numbers);
+
+
+let sum = numbers.reduce((accumulator, elem, indx)=>{
+    console.log(`Accumulator :  ${accumulator}  Element : ${elem} Index ${indx}`);  //reduce()=> reduces whole array to a number
+    return (elem % 2 == 0) ?  accumulator + elem : accumulator; 
+}, 0);
+
+console.log(sum);
