@@ -11,9 +11,9 @@
     [25, 10, 3, 2, 1]
 */
 
-let sortDescending=(nums)=>{
+let sortDescending = (nums) => {
     let nums2 = [...nums]; //copy to avoid mutation
-    return nums2.sort((a, b)=>b-a);
+    return nums2.sort((a, b) => b - a);
 }
 let arr = [1, 10, 2, 25, 3];
 // console.log(arr);
@@ -43,12 +43,12 @@ console.log(sortDescending(arr));
 */
 
 
-const previewDiscount =(Products)=>{
+const previewDiscount = (Products) => {
     let modified = Products.map(
-        (product)=>{
+        (product) => {
             return {
                 ...product,
-                price : product.price * (1 - 0.1),
+                price: product.price * (1 - 0.1),
             }
         }
     );
@@ -57,9 +57,9 @@ const previewDiscount =(Products)=>{
 
 
 let cart = [
-      { name: "Pen", price: 100 },
-      { name: "Bag", price: 500 },
-    ]
+    { name: "Pen", price: 100 },
+    { name: "Bag", price: 500 },
+]
 
 console.log(previewDiscount(cart));
 console.log(cart);
