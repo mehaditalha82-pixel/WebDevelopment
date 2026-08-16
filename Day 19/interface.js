@@ -1,14 +1,17 @@
 "use strict";
-let rahim = {
-    name: "Rahim",
-    worker: true,
-};
-let listWorker = [{ name: "Taha", worker: false }, { name: "Nayem", worker: true }];
-const printName = (employee) => {
-    let i = 0;
-    for (let user of employee) {
-        console.log(`User ${i} : ${user.name}`);
-        i++;
+// interface User {
+//     name : string, 
+//     worker : boolean
+// }
+const user = {
+    name: 'Talha',
+    role: 'admin',
+    allow: (targetUser) => {
+        console.log(`the user ${targetUser.name} is fired`);
     }
 };
-printName(listWorker);
+const user2 = {
+    name: "Nayem",
+    role: "A",
+};
+user.allow(user2);
