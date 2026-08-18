@@ -4,7 +4,7 @@ class Student {
         public name: string,
         public age: number,
         public marks: number
-    ) {}
+    ) { }
 
     getInfo(): string {
         return `Name: ${this.name}, Age: ${this.age}`;
